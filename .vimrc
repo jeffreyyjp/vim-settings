@@ -1,8 +1,28 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Basic Settings --------------------{{{
+set nocompatible              " disable vi compatibility. 
+set history=256               " Number of things to remember in hisroty
+set autowrite                 " Writes on make/shell commands
+set autoread                  
+" Backup
+set nobackup
+set nowritebackup
 
-" set the runtime path to include Vundle and initialize
+" Match and search
+set hlsearch                  " highlight search
+set incsearch                 " typing while matching 
+set ignorecase                " Do case in sensitive matching with 
+set smartcase                 " be sensitive when there's a captial letter
+
+set laststatus=2
+filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
+syntax on
+filetype plugin indent on    " Automatically detect file types. 
+" }}}
+"
+"
+" Plugins ---------------------------{{{
+" set the runtime path to include Vundle and initialize
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -37,7 +57,7 @@ endif
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+"
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -49,65 +69,14 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" }}} 
 
 
 
 
-""""""""""""""""""""""""""BASE CONFIG"""""""""""""""""""""""""""
-
-
-set nobackup
-set noswapfile
-set noundofile
-
-language messages zh_CN.utf-8
-
-set laststatus=2
-
-syntax enable
-
-" syntax highlight on
-syntax on
 
 autocmd! bufwritepost .vimrc source %
 
-set autoread
-
-" highlighted search results
-set hlsearch
-" incremental search
-set incsearch
-
-set ignorecase
-set smartcase
-
-set showcmd
-
-set showmatch
-
-set autowrite
-
-set mouse-=a
-
-" show line numbers
-set nu
-
-set backspace=2
-
-set autoindent
-set smartindent
-
-" tabs and spaces handing
-set expandtab
-
-set tabstop=4
-
-set shiftwidth=4
-
-set shiftround
-
-set fdm=indent
-set foldlevel=99
 
 
 
